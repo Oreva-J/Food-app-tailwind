@@ -1,0 +1,136 @@
+
+/* NAV SECTON *********************************************************/
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.logo{
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 700;
+
+}
+
+
+.nav-linkk{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 50%;
+    
+}
+.nav-linkk li{
+    
+    
+}
+.nav-linkk li a{
+    text-decoration: none;
+    color: black;
+}
+.nav-linkk a:hover{
+    color: gray;
+    transform: translateY(5px);
+}
+
+.nav-linkk a.active{
+    color: tomato;
+}
+
+.ham div{
+    width: 25px;
+    height: 5px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.ham{
+    cursor: pointer;
+    display: none;
+}
+
+/* MEDIA QUERY SECTION FOR NAV ************************************************************* */
+
+@media (max-width:576px){
+    body{
+        overflow-x: hidden;
+    }
+
+    /* nav section******************* */
+    .ham{
+        display: block;
+    }
+    /* nav link list mobile style declaration */
+    .nav-linkk{
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 50%;
+        background-color: #19251f;
+        color: beige;
+        height: 60vh;
+        justify-content: start;
+        align-items: center;
+        gap: 40px;
+        padding-top: 20px;
+        transform: translateX(100%);
+        transition: 0.5s ease-out;
+    }
+    .nav-linkk li a{
+        color: beige;
+        padding: 0 25px;
+        transition: all 0.5s ease;
+    }
+
+    .nav-linkk a:hover{
+        color: gray;
+        transform: translateY(5px);
+        font-size: 16px;
+    }
+    
+    .nav-linkk a.active{
+        color:cyan;
+        font-weight: 800;
+    }
+
+    /* toggle class to call back the link list */
+    .nav-active{
+        transform: translateX(0%);
+    }
+
+
+    /* Fade in list link animation using keyFrames linked to app.js */
+    .nav-linkk li{
+        opacity: 0px;
+    }
+
+    @keyframes navLinkFade{
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translate(0px);
+        }
+
+    }
+
+    /* Ham menu toggle X */
+    .toggle .bar1{
+        transform: rotate(-45deg) translate(-7px,7px);
+    }
+    .toggle .bar2{
+        opacity: 0;
+    }
+    .toggle .bar3{
+        transform: rotate(45deg) translate(-7px,-7px);
+    }
+}
+
+/* -----------------------NAV END-------------------------------------- */
